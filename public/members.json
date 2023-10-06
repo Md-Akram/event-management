@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "img": "https://images.pexels.com/photos/1586996/pexels-photo-1586996.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "name": "John Smith",
+        "role": "Event Manager",
+        "description": "John is an experienced event manager with a strong track record of organizing successful events of various scales. He excels in logistics planning and vendor coordination."
+    },
+    {
+        "id": 2,
+        "img": "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "name": "Alice Johnson",
+        "role": "Event Coordinator",
+        "description": "Alice is a detail-oriented event coordinator who specializes in participant registration and communication. She ensures that all event logistics run smoothly."
+    },
+    {
+        "id": 3,
+        "img": "https://images.pexels.com/photos/3760373/pexels-photo-3760373.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "name": "David Brown",
+        "role": "Marketing Specialist",
+        "description": "David is a creative marketing specialist who designs and executes marketing campaigns to promote events effectively. He leverages social media and digital channels."
+    },
+    {
+        "id": 4,
+        "img": "https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "name": "Saah Miller",
+        "role": "Venue Manager",
+        "description": "Sarah is an expert in venue management, handling everything from booking venues to coordinating with catering and audio-visual teams. She ensures the event's physical setup is perfect."
+    }
+]

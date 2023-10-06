@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Workshops",
+        "description": "Engage in hands-on learning experiences to enhance your skills and knowledge.",
+        "img": "https://media.istockphoto.com/id/1166978137/photo/male-speaker-giving-presentation-in-hall-at-university-workshop.jpg?b=1&s=612x612&w=0&k=20&c=4VtKc6Ks6U3VGqdzB-kCLKdqc0zLfZK5c8BGuhQ0mBk="
+    },
+    {
+        "id": 2,
+        "title": "Webinars",
+        "description": "Join online seminars to stay updated on industry trends and innovations.",
+        "img": "https://media.istockphoto.com/id/1281473608/photo/mature-man-working-from-home.jpg?b=1&s=612x612&w=0&k=20&c=syGdoBUrEpqU7e-Gb9QCzHDE2dggMvx6l513iWknRrY="
+    },
+    {
+        "id": 3,
+        "title": "Career Fairs",
+        "description": "Connect with potential employers and explore job opportunities.",
+        "img": "https://media.istockphoto.com/id/472097889/photo/young-professional-college-student-with-resume-at-job-interview.jpg?b=1&s=612x612&w=0&k=20&c=YUFBbcmOc3mnWIkKuKE4YoP6p4G12UrX9xzwA7Ss9a0="
+    },
+    {
+        "id": 4,
+        "title": "Educational Conferences",
+        "description": "Participate in conferences to gain insights and network with experts in your field.",
+        "img": "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 5,
+        "title": "Training Programs",
+        "description": "Enroll in specialized training programs to acquire new skills and certifications.",
+        "img": "https://media.istockphoto.com/id/1352437949/photo/architects-talking-about-a-new-project-in-the-office.jpg?b=1&s=612x612&w=0&k=20&c=lPDzYasw6QZTHdpzTfnXMqSXnzCGpd5AAIjHpGNovQQ="
+    },
+    {
+        "id": 6,
+        "title": "Expos",
+        "description": "Explore the latest products and innovations in your industry at expos.",
+        "img": "https://media.istockphoto.com/id/933461772/photo/blurred-anonymous-people-walking.jpg?b=1&s=612x612&w=0&k=20&c=fL82RggIcZ4rTpbdmQQE4O7SLy_zl0uKdFoSwsdgqp0="
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Emily Parker",
+        "img": "https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?b=1&s=612x612&w=0&k=20&c=jIlBJzxPiqpROW_F-CsYMHscAcwBqUsrv72uFKwqvlc=",
+        "testimonial": "I am continually impressed by the dedication and expertise of Education Events. Their commitment to providing quality education is evident in everything they do.",
+        "designation": "Professor of Science, Oakridge University"
+    },
+    {
+        "id": 2,
+        "name": "Michael Johnson",
+        "img": "https://media.istockphoto.com/id/1354898581/photo/shot-of-a-young-businessman-using-a-laptop-in-a-modern-office.jpg?b=1&s=612x612&w=0&k=20&c=Vit47QG1v-9u7mrVwDjlF6L7WsuNE7xWEH-g_ScEO60=",
+        "testimonial": "As a student, my experience at Educational Events has been transformative. The faculty's passion for teaching and the vibrant campus atmosphere have shaped my academic journey.",
+        "designation": "Student, Maplewood College"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Susan Roberts",
+        "img": "https://media.istockphoto.com/id/1331257339/photo/portrait-of-happy-mature-man-wearing-spectacles-and-looking-at-camera-indoor.jpg?b=1&s=612x612&w=0&k=20&c=p6YIIeKxIp6pmj7Bzo6wqxQIwh33hrGfy8eaFgmgOLw=",
+        "testimonial": "I have had the privilege of collaborating with the research teams at Educational Events. Their innovative approach to solving complex problems is commendable.",
+        "designation": "Research Scientist, Citywide Research Institute"
+    }
+]
