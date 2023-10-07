@@ -10,6 +10,9 @@ import ServiceDetails from './components/ServiceDetails.jsx'
 import AuthProvider from './Hooks/AuthProvider.jsx'
 import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
+import PrivateRoute from './components/PrivateRoute.jsx'
+import Teams from './components/Teams.jsx'
+import Testimonial from './components/Testimonial.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +21,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        index: true,
         element: <Home />
       },
       {
@@ -27,15 +30,24 @@ const router = createBrowserRouter([
       },
       {
         path: 'singleService/:id',
-        element: <ServiceDetails />
+        element: <PrivateRoute><ServiceDetails /></PrivateRoute>
       },
       {
-        path: '/login',
+        path: 'login',
         element: <Login />
       },
       {
-        path: '/register',
+        path: 'register',
         element: <Register />
+      },
+      {
+        path: 'team',
+        element: <PrivateRoute><Teams /></PrivateRoute>
+      },
+      {
+        path: 'testimonial',
+        element: <PrivateRoute><Testimonial /></PrivateRoute>,
+
       }
 
 

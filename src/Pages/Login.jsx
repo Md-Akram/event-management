@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../Hooks/AuthProvider'
+import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -15,14 +20,40 @@ const Login = () => {
 
     const authContext = useContext(AuthContext)
 
-    const { logInWithGoogle, logIn } = authContext
+    const { logInWithGoogle, logIn, user, setUser } = authContext
 
     const handleGoogleLogin = () => {
-        logInWithGoogle()
+
+        logInWithGoogle().then((result) => {
+            const user = result.user;
+            setUser(user)
+            toast.success('Successfully logged in')
+            navigate(location?.state || '/')
+        }).catch((error) => {
+
+            const errorMessage = error.message;
+            toast.error(errorMessage)
+            console.log(errorMessage);
+        });
+
     }
 
     const handleLogin = () => {
-        logIn(email, password)
+        logIn(email, password).then((userCredential) => {
+            const user = userCredential.user;
+            setUser(user)
+            toast.success('Successfully logged in')
+            navigate(location?.state || '/')
+            setEmail('')
+            setPassword('')
+        })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast.error(errorMessage)
+                console.log(error);
+            });
+
     }
 
     return (
@@ -51,7 +82,7 @@ const Login = () => {
                         </div>
                         <div className="p-2 w-full">
                             <div className="relative">
-                                <label htmlFor="passward" className="leading-7 text-sm text-gray-600">password</label>                         <input
+                                <label htmlFor="passward" className="leading-7 text-sm text-gray-600">Password</label>                         <input
                                     type="password"
                                     placeholder="Password"
                                     value={password}
@@ -68,6 +99,13 @@ const Login = () => {
                         </div>
 
                     </div>
+                </div>
+                <div className="lg:w-1/2 md:w-2/3 mx-auto text-xl text-center mt-10">
+                    Don't have an account?
+                    <Link to='/register' className='text-purple-600 underline'>
+                        Register
+                    </Link >
+
                 </div>
             </div>
         </section>

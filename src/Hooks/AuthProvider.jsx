@@ -1,14 +1,17 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import {
     getAuth,
     signInWithPopup,
     GoogleAuthProvider,
     signOut,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    onAuthStateChanged
 } from "firebase/auth";
 
 import { auth } from "./Firebase-config";
+import { useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const provider = new GoogleAuthProvider();
 
@@ -18,54 +21,37 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const logInWithGoogle = () => {
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                const user = result.user;
-                setUser(user)
-            }).catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const email = error.customData.email;
-                const credential = GoogleAuthProvider.credentialFromError(error);
 
-            });
+
+    useEffect(() => {
+        const unsub = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+            setLoading(!loading)
+        })
+
+        return () => {
+            return unsub()
+        }
+    }, [])
+
+    const logInWithGoogle = () => {
+        return signInWithPopup(auth, provider)
+
     }
 
     const register = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+        return createUserWithEmailAndPassword(auth, email, password)
 
-                const user = userCredential.user;
-                console.log(user);
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorMessage);
-            });
     }
 
     const logIn = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                // ...
-                console.log(user);
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorMessage);
-            });
+        return signInWithEmailAndPassword(auth, email, password)
+
     }
 
     const logOut = () => {
         signOut(auth).then(() => {
-            console.log('signout successful');
+            toast.success('signout successful');
             setUser(null)
         }).catch((error) => {
             console.log(error);
@@ -74,10 +60,12 @@ export const AuthProvider = ({ children }) => {
 
     const value = {
         user,
+        setUser,
         logIn,
         logOut,
         logInWithGoogle,
-        register
+        register,
+        loading
     }
 
     return (

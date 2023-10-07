@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../Hooks/AuthProvider'
+import { Toaster } from 'react-hot-toast'
 
 const Navbar = () => {
 
@@ -27,17 +28,35 @@ const Navbar = () => {
                                 <li>
                                     <NavLink to="/">Home</NavLink>
                                 </li>
-                                < li className="w-10 rounded-full" >
-                                    <img className='w-10 h-full rounded-full' src={user.photoURL} />
+                                <li>
+                                    <NavLink to="team">Team</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="testimonial">Testimonial</NavLink>
+                                </li>
+                                < li className="rounded-full" >
+                                    <p>{user.email}</p>
+                                </li >
+                                < li className="rounded-full" >
+                                    <p>{user.name ? user.name : 'user'}</p>
+                                </li >
+                                < li className="w-10 h-10 rounded-full" >
+                                    <img className='w-full h-full rounded-full' src={user.photoURL ? user.photoURL : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSICBNue4lK6L2HK4Gujo5gEZS3o3mdTxkjhcK8uTCX4g&s'} />
                                 </li >
                                 <li>
-                                    <p onClick={handleLogOut} className="flex mt-2 text-white bg-purple-500 border-0 py-2 px-3 rounded text-lg">LogOut</p>
+                                    <p onClick={handleLogOut} className="flex text-white bg-purple-500 border-0 py-2 px-3 rounded text-lg">LogOut</p>
                                 </li>
                             </ul>
                         ) : (
-                            <ul className="menu menu-horizontal px-1">
+                            <ul className='flex gap-5 items-center justify-center'>
                                 <li>
                                     <NavLink to="/">Home</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="team">Team</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="testimonial">Testimonial</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/login">Login</NavLink>
@@ -49,7 +68,7 @@ const Navbar = () => {
                         )
                 }
 
-
+                <Toaster />
             </div>
             <div className="navbar-end lg:hidden">
                 <div className="dropdown">
