@@ -11,3 +11,15 @@
 ::-webkit-scrollbar-thumb {
     background: transparent;
 }
+
+.active {
+    color: purple !important;
+    border-bottom: 2px solid purple !important;
+    background-color: white !important;
+    border-radius: 0;
+}
+
+.pending {
+    color: black !important;
+    border: none !important;
+}
