@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../Hooks/AuthProvider'
 import { Toaster } from 'react-hot-toast'
 
@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 lg:px-10">
             <div className="navbar-start">
-                <a className="normal-case text-xl">Education Events</a>
+                <Link className="normal-case text-2xl">Education Events</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
 
@@ -75,7 +75,54 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box right-2 w-24">
+                    {
+                        user
+                            ?
+                            (
+                                <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box right-2 min-w-min">
+                                    <li className='mt-2'>
+                                        <NavLink to="/">Home</NavLink>
+                                    </li>
+                                    <li className='mt-2'>
+                                        <NavLink to="team">Team</NavLink>
+                                    </li>
+                                    <li className='mt-2'>
+                                        <NavLink to="testimonial">Testimonial</NavLink>
+                                    </li>
+                                    < li className=" mt-2" >
+                                        <p className=''>{user.email}</p>
+                                    </li >
+                                    < li className="rounded-full mt-2" >
+                                        <p>{user.name ? user.name : 'userName'}</p>
+                                    </li >
+                                    < li className="w-10 h-10 rounded-full mt-2" >
+                                        <img className='w-full h-full rounded-full' src={user.photoURL ? user.photoURL : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSICBNue4lK6L2HK4Gujo5gEZS3o3mdTxkjhcK8uTCX4g&s'} />
+                                    </li >
+                                    <li>
+                                        <p onClick={handleLogOut} className="text-white bg-purple-500 border-0 py-1 px-1 text-center rounded text-lg mt-2">LogOut</p>
+                                    </li>
+                                </ul>
+                            ) : (
+                                <ul tabIndex={0} className="dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box right-2 w-40">
+                                    <li className='mt-2'>
+                                        <NavLink to="/">Home</NavLink>
+                                    </li>
+                                    <li className='mt-2'>
+                                        <NavLink to="team">Team</NavLink>
+                                    </li>
+                                    <li className='mt-2'>
+                                        <NavLink to="testimonial">Testimonial</NavLink>
+                                    </li>
+                                    <li className='mt-2'>
+                                        <NavLink to="/login">Login</NavLink>
+                                    </li>
+                                    <li className='mt-2'>
+                                        <NavLink to="/register"> Register </NavLink>
+                                    </li>
+                                </ul>
+                            )
+                    }
+                    {/* <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box right-2 w-32">
                         <li>
                             <NavLink to="/">
                                 Home
@@ -97,7 +144,7 @@ const Navbar = () => {
                                 Register
                             </NavLink>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </div >

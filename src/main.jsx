@@ -13,6 +13,9 @@ import Register from './Pages/Register.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
 import Teams from './components/Teams.jsx'
 import Testimonial from './components/Testimonial.jsx'
+import "aos/dist/aos.css";
+
+
 
 const router = createBrowserRouter([
   {
@@ -54,6 +57,7 @@ const router = createBrowserRouter([
     ]
   }
 ])
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

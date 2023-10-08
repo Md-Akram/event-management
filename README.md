@@ -1,8 +1,10 @@
-# React + Vite
+# Webapp name : Education Events
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [Education Events](https://www.myawesomewebsite.com)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Features of this webapp**
+- Created with React,React-router, Firebase, TailwindCSS and DaisyUI.
+   - Easily register or log in with google or Email&Password to access personalized features.
+   - Secure and user-friendly authentication system created with firebase.
+   - Private route: Special features are only accessible to the user when he/she is logged in.
+   - Access our website on any device with a seamless and responsive design. Enjoy a consistent user experience on desktop, tablet, and mobile.

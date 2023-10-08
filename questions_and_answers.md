@@ -124,7 +124,7 @@ console.log(count);
 
 #### Answer: C
 
-<i>In this code, initial value of count is 0. Then a forEach loop is run on an array that contains 0,1,2,3. In conditional statement, the if the value is truthy or not. if the value is truthy, then count is incremented by one. As we know 0 is a falsy value, the count variable don't get incremented. For the rest of the numbers in the array the count variable gets incremented. </i>
+<i>In this code, initial value of count is 0. Then a forEach loop is run on an array that contains 0,1,2,3. In conditional statement, the if the value is truthy or not. if the value is truthy, then count is incremented by one. As we know 0 is a falsy value, the count variable don't get incremented while the value is 0. For the rest of the numbers in the array the count variable gets incremented. </i>
 
 </p>
 </details>
