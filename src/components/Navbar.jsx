@@ -17,6 +17,7 @@ const Navbar = () => {
         <div className="navbar bg-base-100 lg:px-10">
             <div className="navbar-start">
                 <Link className="normal-case text-2xl">Education Events</Link>
+                <Toaster />
             </div>
             <div className="navbar-end hidden lg:flex">
 
@@ -68,7 +69,7 @@ const Navbar = () => {
                         )
                 }
 
-                <Toaster />
+
             </div>
             <div className="navbar-end lg:hidden">
                 <div className="dropdown">
